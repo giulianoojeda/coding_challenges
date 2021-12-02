@@ -1,0 +1,15 @@
+{
+  "name": "coderbyte",
+  "version": "1.0.0",
+  "description": "challenge tests from coderbyte ",
+  "main": "",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mocha": "^9.1.3"
+  }
+}
