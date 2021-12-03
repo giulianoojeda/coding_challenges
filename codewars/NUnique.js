@@ -19,6 +19,3 @@ function NUniqueCharacters(str) {
         return acc;
     },[[]]).map(x => x.join('')).sort((a,b) => b.length - a.length)[0];
 }
-
-
-console.log(NUniqueCharacters("2aabbacbaa"));
