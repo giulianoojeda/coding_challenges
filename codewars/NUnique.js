@@ -13,9 +13,11 @@ will range from 1 to 6
 
 function NUniqueCharacters(str) {
     let n = +str[0];
-    return str.split('').splice(1).reduce((acc, val, idx) => {
-        if ( new Set(acc[acc.length - 1].concat(val)).size > n )  { acc.push([str[idx ]]); }
+    return [...str.substr(1)].reduce((acc, val, idx) => {
+      if ( acc[acc.length - 1].concat(val).filter((x, i, a) => a.indexOf(x) === i).length > n )  { acc.push([str[idx ]]); }
         acc[acc.length - 1].push(val);
         return acc;
     },[[]]).map(x => x.join('')).sort((a,b) => b.length - a.length)[0];
 }
+
+console.log(NUniqueCharacters("2aabbacbaa"));
