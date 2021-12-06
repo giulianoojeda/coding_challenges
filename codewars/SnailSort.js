@@ -21,20 +21,19 @@ NOTE 2: The 0x0 (empty matrix) is represented as en empty array inside an array 
 */
 
 snail = function (array) {
-  console.log(A[0]);
-  return A.length > 1
-    ? A.splice(0, 1)[0].concat(
-        snail(
-          A[0]
-            .map((c, i) => {
-              A.map((r) => {
-                r[i];
-              });
-            })
-            .reverse()
-        )
-      )
-    : A[0];
+ 
+    const sorted = []
+    while(array.length){
+      //take off the top row
+      sorted.push(...array.shift())
+      //take off the right column
+      for(let i=0; i<array.length; i++){ sorted.push(array[i].pop()) }
+      //take off the bottom row
+      sorted.push(...(array.pop() || []).reverse())
+      //take off the left column
+      for(let i=array.length-1; i>=0; i--){ sorted.push(array[i].shift()) }
+    }
+    return sorted
 };
 
 var A = [
