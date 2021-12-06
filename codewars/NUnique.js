@@ -17,7 +17,7 @@ function NUniqueCharacters(str) {
       if ( acc[acc.length - 1].concat(val).filter((x, i, a) => a.indexOf(x) === i).length > n )  { acc.push([str[idx ]]); }
         acc[acc.length - 1].push(val);
         return acc;
-    },[[]]).map(x => x.join('')).sort((a,b) => b.length - a.length)[0];
+    },[[]]).map(x => x.join(''));
 }
 
-console.log(NUniqueCharacters("2aabbacbaa"));
+console.log(NUniqueCharacters("2aabbaacbaa"));
