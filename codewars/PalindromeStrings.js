@@ -16,7 +16,24 @@ function isPalindrome(line) {
   return line.toString().split("").reverse().join("") === line.toString();
 }
 
+console.log("Reverse Method")
 console.log(isPalindrome("anna")); //==> true
 console.log(isPalindrome("walter")); //==> false
 console.log(isPalindrome(12321)); // ==> true
 console.log(isPalindrome(123456)); // ==> false
+
+
+function isPalindrome2(line) {
+  word = line.toString();
+  for (var i = 0; i < word.length; i++) {
+    if (word[i] !== word[word.length - 1 - i]) {
+      return false;
+    }
+  }
+  return true;
+}
+console.log("For Loop Method")
+console.log(isPalindrome2("anna")); //==> true
+console.log(isPalindrome2("walter")); //==> false
+console.log(isPalindrome2(12321)); // ==> true
+console.log(isPalindrome2(123456)); // ==> false
