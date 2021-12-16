@@ -16,6 +16,5 @@ function solution(S) {
     .filter(String);
   var f = indices[count / 3] - indices[count / 3 - 1];
   var g = indices[(count / 3) * 2] - indices[(count / 3) * 2 - 1];
-  console.log(indices, count / 3, count / 3 - 1, f, g);
   return (f * g) % 1000000007;
 }
