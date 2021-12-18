@@ -44,6 +44,18 @@ La dificultad del reto está en pensar que sólo podemos configurar el salto del
 */
 
 function getMinJump(obstacles) {
-  
-  return true;
+  const maxPositionObstacle = Math.max(...obstacles);
+  let distance = 1;
+  let iterator = 0;
+  while (iterator <= maxPositionObstacle) {
+    if (obstacles.includes(iterator)) {
+      iterator = 0;
+      distance++;
+    }
+    iterator += distance;
+    console.log(iterator, distance);
+  }
+  return distance;
 }
+
+console.log(getMinJump([2, 4, 6, 8, 10])); // -> 7
